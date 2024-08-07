@@ -2,11 +2,11 @@
 require 'init.php';
 ?>
 <?php include 'head.php'; ?>
-<body background="image/bg2.jpg">
+<body >
    <div class="container start-container">
      <div class="col-md-6 title-text">
-         <img src="image/polylogo.png" class="img-rounded img-responsive" width="100" height="100">
-     	<h4>The Polytechnic</h4>
+         <img src="image/ttu-logo6-1.png" class="img-rounded img-responsive" width="300" height="300">
+     	<h4 style="color: darkblue;">ADWEN, AKOMA NA NSA MA MPUNTU </h4>
      	<h1>STUDENTS'MANAGEMENT SYSTEM</h1>
      </div>
      <div class="col-md-4">
