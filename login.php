@@ -10,9 +10,12 @@
 		foreach($result as $data){
            $id = $data->id;
            $user = $data->username;
+		   $department = $data->department;
+
 
            $_SESSION['id'] = $id;
            $_SESSION['user'] = $user;
+		   $_SESSION['department'] = $department;
            
 		}
         echo 'true';

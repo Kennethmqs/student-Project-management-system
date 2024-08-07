@@ -9,7 +9,8 @@ if(isset($_POST['action']) == 'yes'){
 	// foreach($rows as $row){
 	//    $offset = $row->offset;
 
-	   $run = $db->query("SELECT * FROM `project` WHERE allocation = 0 order by rand()");
+	//    $run = $db->query("SELECT * FROM `project` WHERE allocation = 0 order by rand()");
+	$run = $db->query("SELECT * FROM `project` order by rand()");
 	   $result = $run->fetchAll(PDO::FETCH_OBJ);
 
 	   if($result){
