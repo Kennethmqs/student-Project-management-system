@@ -1,0 +1,212 @@
+/* Sub-Content Styles */
+.sub-content {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.details,
+.files {
+  flex: 1;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Inner Content Styles */
+.details .top-content,
+.details .bottom-content {
+  margin-bottom: 20px;
+}
+
+.bottom-content .team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bottom-content .team-member img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.files {
+  max-width: 750px;
+}
+
+/* File List Styles */
+.file-list {
+  list-style: none;
+  padding: 0;
+  height: 210px;
+  overflow-y: auto;
+}
+
+.file-list::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.file-list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb when hovered */
+}
+
+.file-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-list li:last-child {
+  border-bottom: none;
+}
+
+.file-actions {
+    display: flex;
+    align-items: center;
+}
+
+.file-actions a {
+    margin-left: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.view-btn {
+    background-color: #333; /* Dark background for view button */
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Red background for delete button */
+}
+
+.file-actions a:hover {
+    opacity: 0.8; /* Optional: Add hover effect */
+}
+
+
+.file-list .file-actions button:hover {
+  background-color: #555;
+}
+
+/* File Upload Styles */
+.file-upload form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px; 
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+textarea {
+  width: 97%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+}
+
+textarea:focus {
+  border: none;
+}
+
+.file-upload .custom-file-upload-label {
+  padding: 10px 15px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.file-upload .custom-file-upload-label:hover {
+  background-color: #555;
+}
+
+.submit-btn{
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  width: 90px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .sub-content {
+    width: 100%;
+    flex-direction: column;
+  }
+  .files {
+    max-width: 100%;
+  }
+}
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional: adds a border around the scrollable area */
+    background-color: #f9f9f9; /* Optional: background color */
+}
+
+.scroll-container span {
+    margin-right: 20px; /* Adjust spacing between radio button options */
+    display: inline-flex;
+    align-items: center;
+}
+
+.scroll-container label {
+    margin-right: 10px; /* Space between the label and radio button */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333; /* Label text color */
+}
+
+.scroll-container input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #007bff; /* Change the color of the radio button */
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 5px; /* Adjust the height of the scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Rounded corners for the scrollbar thumb */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color when hovering over the scrollbar thumb */
+}

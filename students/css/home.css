@@ -1,0 +1,35 @@
+
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stats .card {
+  background-color: white;
+  padding: 7px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  height: 200px !important;
+  width: 100% !important;
+}
+
+.chart-container canvas {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+#progress-pie-chart , #progress-bar-chart {
+  width: 50% !important;
+  height: 500px !important;
+}

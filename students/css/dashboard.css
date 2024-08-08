@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Topbar Styles */
+/* .topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    z-index: 1000;
+} */
+
+/* Topbar Styles */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    z-index: 1000;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.topbar .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* User Profile Styles */
+.topbar-right {
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name {
+    font-size: 16px;
+}
+
+
+.topbar .menu-toggle {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: #444;
+    color: white;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(-200px);
+    z-index: 999;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+/* Content Styles */
+.content {
+    margin-top: 60px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.content.active {
+    margin-left: 200px;
+}
+
+/* View Toggle Styles */
+.view-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.view-toggle button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.view-toggle button:hover {
+    background-color: #555;
+}
+
+/* Project Container Styles */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    height: 200px;
+    width: calc(31.533% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-container.list-view .project-card {
+    width: calc(100% - 40px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        top: 0;
+        width: 100%;
+        height: auto;
+        transform: translateY(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateY(0);
+    }
+
+    .content.active {
+        margin-left: 0;
+    }
+
+    .topbar .menu-toggle {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }
+
+    .project-card {
+        width: calc(100% - 40px);
+    }
+
+    .project-container.list-view .project-card {
+        width: calc(100% - 40px);
+    }
+}
