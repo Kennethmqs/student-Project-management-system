@@ -129,7 +129,7 @@
 		<?php
 		if (isset($_POST['submit'])) {
 			$username = $_POST['username'];
-			$password = $_POST['password'];
+			$password = md5($_POST['password']);
 			$department = $_POST['department'];
 			$email = $username . '@ttu.edu' . '.com';
 			$role = $_POST['role'];

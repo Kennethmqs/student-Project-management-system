@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2024 at 09:15 AM
+-- Generation Time: Aug 22, 2024 at 05:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,23 +33,25 @@ CREATE TABLE `auth` (
   `password` varchar(255) NOT NULL,
   `department` int(11) DEFAULT NULL,
   `email` text DEFAULT NULL,
-  `role` text DEFAULT NULL
+  `role` text DEFAULT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `auth`
 --
 
-INSERT INTO `auth` (`id`, `username`, `password`, `department`, `email`, `role`) VALUES
-(1, 'admin', 'password', NULL, NULL, NULL),
-(2, 'demo', 'password', NULL, NULL, 'supervisor'),
-(3, 'stephen', '11tomtom', NULL, NULL, 'supervisor'),
-(4, 'daniel', '1234', 0, 'e@g.vom', 'supervisor'),
-(5, 'bobobo', '1234', 0, '', ''),
-(6, 'ewww', '1234', 0, '@.com', 'admin'),
-(7, 'spryker', '1234', 0, '@.com', 'admin'),
-(8, 'daniel88', 'sdssssss', 510, '@ttu.edu.com', 'user'),
-(9, 'daniel.mensah', 'Daniel024419', 511, 'daniel.mensah@ttu.edu.com', 'admin');
+INSERT INTO `auth` (`id`, `username`, `password`, `department`, `email`, `role`, `date`) VALUES
+(13, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL, '2024-08-22 03:27:52'),
+(2, 'demo', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, 'admin', '2024-08-22 03:27:52'),
+(3, 'stephen', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, 'supervisor', '2024-08-22 03:27:52'),
+(4, 'daniel', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'e@g.vom', 'supervisor', '2024-08-22 03:27:52'),
+(5, 'bobobo', '81dc9bdb52d04dc20036dbd8313ed055', 0, '', '', '2024-08-22 03:27:52'),
+(6, 'ewww', '81dc9bdb52d04dc20036dbd8313ed055', 0, '@.com', 'admin', '2024-08-22 03:27:52'),
+(7, 'spryker', '81dc9bdb52d04dc20036dbd8313ed055', 0, '@.com', 'admin', '2024-08-22 03:27:52'),
+(8, 'daniel88', '81dc9bdb52d04dc20036dbd8313ed055', 510, '@ttu.edu.com', 'user', '2024-08-22 03:27:52'),
+(9, 'daniel.mensah', '81dc9bdb52d04dc20036dbd8313ed055', 511, 'daniel.mensah@ttu.edu.com', 'admin', '2024-08-22 03:27:52'),
+(1, 'susu', '81dc9bdb52d04dc20036dbd8313ed055', 514, 'momo@ttu.edu.com', 'supervisor', '2024-08-22 03:27:52');
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,8 @@ INSERT INTO `departments` (`id`, `department_name`) VALUES
 (511, 'lolo'),
 (512, ''),
 (513, ''),
-(514, 'Art');
+(514, 'Art'),
+(515, 'Hosp');
 
 -- --------------------------------------------------------
 
@@ -95,15 +98,15 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id`, `project_name`, `project_case`, `project_level`, `allocation`, `project_department`, `project_start_date`, `project_end_date`) VALUES
-(1, 'Design and Implementation of Loan disbursement system', 'A case study of GT Bank Plc', 'HND', 1, NULL, '2024-08-07', '2024-08-12'),
-(5, 'Loan saving system', 'Guiness Nigeria', 'HND', 1, NULL, '2024-08-13', '2024-08-05'),
-(7, 'Bank ATM System', 'Diamond Bank', 'HND', 2, NULL, '2024-06-03', '2024-07-01'),
+(1, 'Design and Implementation of Loan disbursement system', 'A case study of GT Bank Plc', 'HND', 1, NULL, '2024-08-21', '2024-09-12'),
+(5, 'Loan saving system', 'Guiness Nigeria', 'HND', 1, NULL, '2024-08-13', '2024-09-05'),
+(7, 'Bank ATM System', 'Diamond Bank', 'HND', 2, NULL, '2024-06-03', '2024-09-01'),
 (6, 'Login Registration System', 'Guiness Nigeria', 'ND', 1, NULL, '2024-08-05', '2024-08-05'),
-(8, 'Student Project Allocation and Management System', 'A case study of The Polytechnic,Ibadan', 'HND', 1, NULL, '2024-08-05', '2024-08-05'),
-(9, 'Inventory System', 'XYZ limited', 'ND', 1, NULL, '2024-08-05', '2024-08-05'),
+(8, 'Student Project Allocation and Management System', 'A case study of The Polytechnic,Ibadan', 'HND', 1, NULL, '2024-08-05', '2024-09-05'),
+(9, 'Inventory System', 'XYZ limited', 'ND', 1, NULL, '2024-08-05', '2024-09-05'),
 (14, 'toko', '\r\n				vy', '3', 0, 510, '2024-08-05', '2024-08-05'),
-(11, 'Test1', 'test 1', '510', 1, NULL, '2024-08-05', '2024-08-05'),
-(12, 'toko', 'toko', '3', 1, NULL, '2024-08-06', '2024-08-13'),
+(11, 'Test1', 'test 1', '510', 1, NULL, '2024-08-01', '2024-08-13'),
+(12, 'toko', 'toko', '3', 1, NULL, '2024-08-05', '2024-08-13'),
 (15, 'pop', 'ww	', '3', 0, 511, '2024-08-13', '2024-08-23');
 
 -- --------------------------------------------------------
@@ -139,7 +142,7 @@ INSERT INTO `student` (`id`, `name`, `department`, `level`, `matric`, `date`, `e
 (7945, 'weed', '111', 'ND 2', '11111', '2024-08-05', '11111@ttu.edu.com', '81dc9bdb52d04dc20036dbd8313ed055'),
 (2509, 'mosu wee', 'wrr', 'HND 1', '23232323', '2024-08-05', '23232323@ttu.edu.com', '81dc9bdb52d04dc20036dbd8313ed055'),
 (5912, 'miiu', '511', '2', '11111', '2024-08-05', '11111@ttu.edu.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(1478, 'qwwww', '510', '3', '202421177669', '2024-08-05', '202421177669@ttu.edu.com', '81dc9bdb52d04dc20036dbd8313ed055');
+(1478, 'Nunu', '510', '3', '202421177669', '2024-08-05', '202421177669@ttu.edu.com', 'd5ab8dc7ef67ca92e41d730982c5c602');
 
 -- --------------------------------------------------------
 
@@ -166,7 +169,8 @@ CREATE TABLE `students_project_files` (
 INSERT INTO `students_project_files` (`id`, `name`, `project_id`, `assignment_id`, `student_id`, `note`, `document_type`, `status`, `created_at`) VALUES
 (6, 'Proposal-8549.pdf', 12, 5, 8549, 'guzu', 'Proposal', 'accepted', '2024-08-06'),
 (7, 'Chapter Two-8549.pdf', 7, 2, 8549, 'todo', 'Chapter Two', 'pending', '2024-08-06'),
-(8, 'Proposal-1478.pdf', 11, 4, 1478, 'see', 'Proposal', 'pending', '2024-08-06');
+(8, 'Proposal-1478.pdf', 11, 4, 1478, 'see', 'Proposal', 'pending', '2024-08-06'),
+(9, 'Chapter One-1478.pdf', 11, 4, 1478, 'see', 'Chapter One', 'pending', '2024-08-07');
 
 -- --------------------------------------------------------
 
@@ -213,6 +217,36 @@ INSERT INTO `student_projects` (`id`, `student_id`, `supervisor_id`, `project_id
 (3, 5912, 1, 12, '2024-08-05 00:00:00', '2024-08-05 00:00:00'),
 (4, 1478, 1, 11, '2024-08-05 00:00:00', '2024-08-05 00:00:00'),
 (5, 8549, 6, 12, '2024-08-05 00:00:00', '2024-08-05 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_projects_files_feedback`
+--
+
+CREATE TABLE `student_projects_files_feedback` (
+  `id` int(11) NOT NULL,
+  `feedback` text DEFAULT NULL,
+  `project_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `assignment_id` int(11) NOT NULL,
+  `supervisor_id` int(11) NOT NULL,
+  `resolved` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_projects_files_feedback`
+--
+
+INSERT INTO `student_projects_files_feedback` (`id`, `feedback`, `project_id`, `student_id`, `assignment_id`, `supervisor_id`, `resolved`, `created_at`) VALUES
+(1, 'rewrite the introduction', 7, 1, 2, 1, 0, '2024-08-07 10:06:09'),
+(2, 'rewrite the organization of the study', 1, 1, 2, 1, 1, '2024-08-07 10:06:09'),
+(3, 'shit', 7, 1, 2, 1, 0, '2024-08-19 08:41:02'),
+(4, 'wooah', 7, 1, 2, 1, 0, '2024-08-19 08:42:46'),
+(5, 'hii', 7, 1, 2, 1, 0, '2024-08-19 08:45:58'),
+(6, 'swwwww', 7, 1, 2, 1, 0, '2024-08-19 08:48:35'),
+(7, 'bolo', 7, 1, 2, 1, 0, '2024-08-19 08:48:49');
 
 --
 -- Indexes for dumped tables
@@ -261,6 +295,12 @@ ALTER TABLE `student_projects`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student_projects_files_feedback`
+--
+ALTER TABLE `student_projects_files_feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -268,13 +308,13 @@ ALTER TABLE `student_projects`
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=515;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=516;
 
 --
 -- AUTO_INCREMENT for table `project`
@@ -292,7 +332,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `students_project_files`
 --
 ALTER TABLE `students_project_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `student_levels`
@@ -305,6 +345,12 @@ ALTER TABLE `student_levels`
 --
 ALTER TABLE `student_projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `student_projects_files_feedback`
+--
+ALTER TABLE `student_projects_files_feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

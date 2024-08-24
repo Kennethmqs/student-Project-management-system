@@ -34,7 +34,7 @@ $("#login_form1").submit(function(e){
 
 				$.jGrowl("Loading Project Files Please Wait......", { sticky: true });
 				$.jGrowl("Welcome to Student's Project Management System", { header: 'Access Granted' });
-				var delay = 5000;
+				var delay = 2000;
 					setTimeout(function(){ window.location = 'dashboard.php'  }, delay);  
 			}else
 			{
